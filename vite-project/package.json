@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.11"
+    "@mdi/font": "^7.4.47",
+    "save": "^2.9.0",
+    "vite-plugin-vuetify": "^2.0.1",
+    "vue": "^3.3.11",
+    "vuetify": "^3.4.9"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
