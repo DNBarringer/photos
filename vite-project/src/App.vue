@@ -1,13 +1,13 @@
-<script setup>
-  import SideBar from "./components/SideBar.vue";
+<script setup lang="ts">
   import Gallery from "./components/Gallery.vue";
+  import SideBar from "./components/SideBar.vue";
 </script>
 
 <template>
   <VApp>
     <SideBar></SideBar>
-    <VMain>
-      <Gallery class="mx-5 my-2 pa-3"></Gallery>
+    <VMain class="pa-0">
+      <Gallery></Gallery>
     </VMain>
   </VApp>
 </template>

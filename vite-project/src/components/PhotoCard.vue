@@ -1,18 +1,27 @@
 <template>
-    <VImg :src="image" alt="Photo" aspect-ratio="1" cover>
-        <template v-slot:placeholder>
-            <div class="d-flex align-center justify-center fill-height">
-                <VProgressCircular
-                color="grey-lighten-4"
-                indeterminate
-                ></VProgressCircular>
-            </div>
-        </template>
-    </VImg>
-</template>
+  <VCard
+    class="mx-auto"
+    theme="dark"
+    width="600"
+    height="800"
+    :image="test"
+  >
+  <VCardText class="text-left text-h1" style="position: absolute; bottom: 0;">
+      <div style="position: absolute; bottom: 50px; height: max-content; display: flex; align-items: flex-end;">
+          SPACE
+      </div>
+  </VCardText>
+
+</VCard>
+
+</template>s
 
 <script setup lang="ts">
-defineProps<{
-  image?: string
-}>()
+import { VCard } from 'vuetify/components/VCard';
+
+const props = defineProps(['...']); // Define your props here
+
+const test = new URL('../assets/images/space.jpg', import.meta.url).href
+console.log(test)
+
 </script>

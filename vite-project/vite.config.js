@@ -9,5 +9,6 @@ export default defineConfig({
     vue(),
     vuetify({ autoImport: true }),
   ],
-  base: '/photos/'
+  base: '/photos/',
+  assetsInclude: 'src/assets/**',
 })
