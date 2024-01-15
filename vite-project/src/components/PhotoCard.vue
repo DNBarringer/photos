@@ -3,7 +3,9 @@
     class="mx-auto"
     theme="dark"
     width="35%"
+    min-width="500px"
     height="90%"
+    min-height="900px"
     :image="image"
     style="border: 6px solid rgb(248, 237, 221); border-radius: 0;"
     @click="showDialog = true"
@@ -14,7 +16,7 @@
       </div>
     </VCardText>
 
-    <VDialog v-model="showDialog" @overlay-click="showDialog = false" max-width="70%">
+    <VDialog v-model="showDialog" @overlay-click="showDialog = false" max-width="70%" min-width="500px">
       <div style="overflow-y: auto;">
         <VImg :src="image" contain />
       </div>
