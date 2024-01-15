@@ -1,28 +1,14 @@
-<script setup lang="ts">
-  import Gallery from "./components/Gallery.vue";
-  import SideBar from "./components/SideBar.vue";
-</script>
-
 <template>
-  <VApp>
-    <SideBar></SideBar>
-    <VMain class="pa-0">
+  <VApp class="ma-0" width="100%">
+    <VMain class="d-flex pa-0 ma-0 bg-blue-grey-darken-3">
+      <div class=" text-left position-absolute top-0 left-0 w-100 h-100">
+        <p class="text-h3">David Barringer</p>
+      </div>
       <Gallery></Gallery>
     </VMain>
   </VApp>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup lang="ts">
+import Gallery from "./components/Gallery.vue";
+</script>

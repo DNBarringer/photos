@@ -1,5 +1,5 @@
 <template>
-  <PhotoCard>
+  <PhotoCard style="margin-top: 128px;">
 
   </PhotoCard>
 </template>
