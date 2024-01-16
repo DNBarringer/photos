@@ -2,16 +2,16 @@
   <VCard
     class="mx-auto"
     theme="dark"
-    width="35%"
-    min-width="500px"
-    height="90%"
-    min-height="900px"
+    width="55vh"
+    max-width="100%"
+    height="85vh"
+    max-height="100%"
     :image="image"
     style="border: 6px solid rgb(248, 237, 221); border-radius: 0;"
     @click="showDialog = true"
   >
-    <VCardText class="text-left text-h1" style="position: absolute; bottom: 0;">
-      <div style="position: absolute; bottom: 50px; height: max-content; display: flex; align-items: flex-end;">
+    <VCardText style="position: absolute; bottom: 0;">
+      <div style="font-size: 4vh;">
         {{ text }}
       </div>
     </VCardText>
@@ -24,10 +24,20 @@
   </VCard>
 </template>
 
+<style scoped>
+/* Adjust min-width for different screen sizes using media queries */
+@media only screen and (max-width: 600px) {
+  .mx-auto {
+    min-width: 100%; /* Adjust this value as needed */
+  }
+}
+</style>
+
 <script setup lang="ts">
   import { ref } from 'vue';
   import { VCard, VCardText, VDialog, VImg } from 'vuetify/components';
 
-  const props = defineProps(['text', 'image']); // Define your props here
+  const props = defineProps(['text', 'image']);
   const showDialog = ref(false);
+
 </script>
