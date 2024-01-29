@@ -1,6 +1,6 @@
 <template>
     <VCard height="100vh" width="100%">
-        <VImg :src="image" cover position="top" style="filter: brightness(30%);"></VImg>
+        <VImg :src="image" cover position="50% 65%" style="filter: brightness(30%);"></VImg>
         <VImg :src="image" height="100%" width="100vh" style="position: absolute; top: 50%; left: 50%;  transform: translate(-50%, -50%);"></VImg>
       <VCardText style="white-space: pre;">
         <div class="my-back" style="bottom: 5%; position: absolute;">
@@ -29,7 +29,7 @@
     font-weight: 400;
     font-style: normal;
     text-align: left;
-    filter: drop-shadow(0 0 2px orange); /* Adjust the shadow size as needed */
+    filter: drop-shadow(0 0 1px white); /* Adjust the shadow size as needed */
 
   }
   </style>
