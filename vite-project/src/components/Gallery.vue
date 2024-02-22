@@ -4,29 +4,22 @@
       :image="mountainImage"
       :text="mountainText"
       :bg_image="bg_image"
-      style="height: 100vh; width: 100vw;"
     ></PhotoCardLargeLandscape>
     <PhotoCardLargePortrait
       :image="spaceImage"
       :text="spaceText"
       :bg_image="bg_image"
-      style="height: 100vh; width 100vw"
     ></PhotoCardLargePortrait>
   </div>
 </template>
 
 
 <script setup lang="ts">
-import { PHOTO_TYPES } from '../photoTypes';
-import PhotoCardLargeLandscape from './PhotoCardLargeLandscape.vue';
-import PhotoCardLargePortrait from './PhotoCardLargePortrait.vue';
-import PhotoCardMedium from './PhotoCardMedium.vue';
-
-
+import PhotoCardLargeLandscape from './photocard/Landscape.vue';
+import PhotoCardLargePortrait from './photocard/Portrait.vue';
 
 const spaceText = 'Praire\nMountain';
 const spaceImage = new URL('../assets/images/space.jpg', import.meta.url).href;
-
 
 const mountainText = 'Icefield Parkway';
 const mountainImage = new URL('../assets/images/icefield_mountains.jpg', import.meta.url).href;

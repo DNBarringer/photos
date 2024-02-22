@@ -1,6 +1,6 @@
 <template>
-  <VApp class="ma-0" width="100%">
-    <VMain class="d-flex pa-0 ma-0 bg-blue-grey-darken-3">
+  <VApp>
+    <VMain class="bg-blue-grey-darken-3" v-scroll="onScroll">
       <TopBar></TopBar>
       <Gallery></Gallery>
     </VMain>
@@ -8,6 +8,10 @@
 </template>
 
 <script setup lang="ts">
-import Gallery from "./components/Gallery.vue";
-import TopBar from "./components/TopBar.vue";
+  import Gallery from "./components/Gallery.vue";
+  import TopBar from "./components/TopBar.vue";
+
+  function onScroll () {
+    console.log("Scrolled");
+  };
 </script>

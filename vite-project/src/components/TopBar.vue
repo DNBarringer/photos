@@ -1,5 +1,5 @@
 <template>
-    <div class="text-left position-absolute left-0 w-100 h-100">
+    <div class="text-left left-0" style="height: 100vh; width: 100vw;">
         <PageTitle/>
     </div>
 </template>
