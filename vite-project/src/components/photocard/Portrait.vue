@@ -19,7 +19,7 @@
           id="background-image"
           :src="image"
           cover position="50% 20%"
-          style="filter: brightness(30%) blur(5px); z-index: 1;"
+          style="filter: brightness(40%) blur(5px); z-index: 1;"
         ></VImg>
 
     </VCard>
@@ -31,6 +31,7 @@
   </script>
   
 <style scoped>
+
   .my-back {
     background-image: url("../../assets/images/space.jpg");
     -webkit-background-clip: text;
@@ -45,7 +46,6 @@
     font-style: normal;
     text-align: left;
     filter: brightness(110%) drop-shadow(0 0 1px #ffffff); /* Adjust the shadow size as needed */
-
   }
   </style>
   

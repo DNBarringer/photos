@@ -1,21 +1,27 @@
 <template>
   <VCard
-      :image="image"
       height="100vh"
       width="100vw"
-  >
-    <div class="my-back" :style="{ backgroundImage: `url(${bg_image})`, position: 'absolute', ...additionalStyle }">
-      <p>{{ text }}</p>
-    </div>
+  > 
+  <VImg :src="image" cover position="center top"></VImg>
+  <div class="my-back" :style="{ backgroundImage: `url(${bg_image})`, position: 'absolute', marginLeft: '20px', ...additionalStyle }">
+    <p>{{ text }}</p>
+  </div>
   </VCard>
 </template>
 
 <script setup lang="ts">
   const props = defineProps(['text', 'image', 'bg_image', 'additionalStyle']);
-  import { VCard, VCardText } from 'vuetify/components';
+  import { VCard } from 'vuetify/components';
 </script>
 
 <style scoped>
+
+.full-width {
+  width: 100%; /* Make the image fill the entire width of its container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Resize the image to cover the entire container, cropping if necessary */
+}
 .my-back {
   background-position: 75% 100%;
   -webkit-background-clip: text;

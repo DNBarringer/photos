@@ -12,12 +12,15 @@
       :bg_image="bg_image"
       :additionalStyle="{ right: '5%', bottom: '5%' }"
     ></PhotoCardLargePortrait>
-    <PhotoCardLargeLandscape
-      :image="morganImage"
-      :text="morganText"
-      :bg_image="bg_image"
-      :additionalStyle="{ top: '5%' }"
-    ></PhotoCardLargeLandscape>
+    <VCard
+      height="100vh"
+      width="100vw"
+      > 
+      <VImg :src="morganImage" cover position="center 80%"></VImg>
+      <div class="my-back" :style="{ backgroundImage: `url(${bg_image})`, marginLeft: '20px', position: 'absolute', top: '5%' }">
+        <p>{{ morganText }}</p>
+      </div>
+      </VCard>
   </div>
 </template>
 
@@ -37,3 +40,22 @@ const morganText = 'Morgan';
 const morganImage = new URL('../assets/images/morgan.jpg', import.meta.url).href;
 
 </script>
+
+<style scoped>
+
+  .my-back {
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: 65% 50%;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent; /* Fallback */
+    font-stretch: extra-expanded;  
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 12vh;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    filter: brightness(110%) drop-shadow(0 0 1px #ffffff); /* Adjust the shadow size as needed */
+  }
+  </style>
