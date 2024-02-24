@@ -4,15 +4,26 @@
       width="100vw"
   > 
   <VImg :src="image" cover position="center top"></VImg>
-  <div class="my-back" :style="{ backgroundImage: `url(${bg_image})`, position: 'absolute', marginLeft: '20px', ...additionalStyle }">
-    <p>{{ text }}</p>
-  </div>
+    <div class="my-back" :style="{ backgroundImage: `url(${bg_image})`, position: 'absolute', marginLeft: '20px', ...additionalStyle }" @click="text_overlay = !text_overlay">
+      <p>{{ text }}</p>
+    </div>
+
+
+  <VOverlay v-model="text_overlay" contained scrim="#000000" class="align-center justify-center">
+    <VCard text="This is the additional text that appears">
+
+    </VCard>
+  </VOverlay>
+
   </VCard>
 </template>
 
 <script setup lang="ts">
-  const props = defineProps(['text', 'image', 'bg_image', 'additionalStyle']);
-  import { VCard } from 'vuetify/components';
+import { defineProps, ref } from 'vue';
+import { VCard, VImg, VOverlay } from 'vuetify/components';
+
+const { text, image, bg_image, additionalStyle } = defineProps(['text', 'image', 'bg_image', 'additionalStyle']);
+const text_overlay = ref(false);
 </script>
 
 <style scoped>
@@ -35,5 +46,9 @@
   font-weight: 400;
   font-style: normal;
   text-align: center;
+  user-select: none;
+  cursor: pointer;
 }
+
+
 </style>

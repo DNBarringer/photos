@@ -17,7 +17,7 @@
       width="100vw"
     > 
       <VImg :src="morganImage" cover position="center 80%"></VImg>
-      <div class="my-back" :style="{ backgroundImage: `url(${bg_image})`, marginLeft: '20px', position: 'absolute', top: '5%' }">
+      <div class="my-back" :style="{ backgroundImage: `url(${bg_image})`, position: 'absolute', top: '5%' }">
         <p>{{ morganText }}</p>
       </div>
     </VCard>
@@ -56,6 +56,9 @@
     font-weight: 400;
     font-style: normal;
     text-align: left;
+    margin-left: 5vw;
     filter: brightness(110%) drop-shadow(0 0 1px #ffffff); /* Adjust the shadow size as needed */
+    user-select: none;
+    cursor: pointer;
   }
   </style>
