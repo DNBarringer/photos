@@ -3,27 +3,47 @@
       height="100vh"
       width="100vw"
   > 
-  <VImg :src="image" cover position="center top"></VImg>
-    <div class="my-back" :style="{ backgroundImage: `url(${bg_image})`, position: 'absolute', marginLeft: '20px', ...additionalStyle }" @click="text_overlay = !text_overlay">
-      <p>{{ text }}</p>
+    <VImg
+      :src="image" 
+      cover
+      :position="imagePosition"/>
+
+    <div class="title" :style="{ backgroundImage: `url(${bgImage})`, position: 'absolute', ...titlePositionStyle }" @click="text_overlay = !text_overlay">
+        <p>{{ text }}</p>
     </div>
 
-
-  <VOverlay v-model="text_overlay" contained scrim="#000000" class="align-center justify-center">
-    <VCard text="This is the additional text that appears">
-
-    </VCard>
-  </VOverlay>
+    <VOverlay v-model="text_overlay" contained scrim="#000000" class="align-center justify-center">
+      <VCard text="This is the additional text that appears"/>
+    </VOverlay>
 
   </VCard>
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from 'vue';
-import { VCard, VImg, VOverlay } from 'vuetify/components';
+  import { ref } from 'vue';
+  import { VCard, VImg, VOverlay } from 'vuetify/components';
 
-const { text, image, bg_image, additionalStyle } = defineProps(['text', 'image', 'bg_image', 'additionalStyle']);
-const text_overlay = ref(false);
+  const { text, image, bgImage, titlePosition, imagePosition } = defineProps({
+    text: String,
+    image: String,
+    bgImage: String,
+    titlePosition: {
+      type: String,
+      default: 'SW',
+      validator: (value: string) => ['NW', 'NE', 'SW', 'SE'].includes(value)
+    },
+    imagePosition: String
+  });
+
+  const titlePositionStyle = {
+    top: titlePosition.includes('N') ? '5%' : 'auto',
+    bottom: titlePosition.includes('S') ? '5%' : 'auto',
+    right: titlePosition.includes('E') ? '5%' : 'auto',
+    left: titlePosition.includes('W') ? '5%' : 'auto',
+  };
+
+
+  const text_overlay = ref(false);
 </script>
 
 <style scoped>
@@ -33,7 +53,7 @@ const text_overlay = ref(false);
   height: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Resize the image to cover the entire container, cropping if necessary */
 }
-.my-back {
+.title {
   background-position: 75% 100%;
   -webkit-background-clip: text;
   background-clip: text;
